@@ -1,0 +1,43 @@
+#!/bin/bash
+#
+# This script helps you to manage the updates in Ubuntu Windows WSL.
+# Author: Laszlo Kardos
+# License: GNU/GPL or newer
+#
+# Installation:
+# sudo cp -R update /usr/bin/update
+# sudo chmod +x /usr/bin/update
+
+TEXT_RESET='\e[0m'
+TEXT_YELLOW='\e[0;33m'
+TEXT_RED_B='\e[1;31m'
+
+sudo apt-get update -y
+echo -e $TEXT_YELLOW
+echo 'APT update finished...'
+echo -e $TEXT_RESET
+
+sudo apt-get dist-upgrade -y
+echo -e $TEXT_YELLOW
+echo 'APT distributive upgrade finished...'
+echo -e $TEXT_RESET
+
+sudo apt full-upgrade -y
+echo -e $TEXT_YELLOW
+echo 'APT upgrade finished...'
+echo -e $TEXT_RESET
+
+sudo apt autoremove --purge -y
+echo -e $TEXT_YELLOW
+echo 'APT auto remove finished...'
+echo -e $TEXT_RESET
+
+sudo apt autoclean -y
+echo -e $TEXT_YELLOW
+echo 'APT auto clean finished...'
+echo -e $TEXT_RESET
+
+sudo apt clean -y
+echo -e $TEXT_YELLOW
+echo 'APT clean finished...'
+echo -e $TEXT_RESET
