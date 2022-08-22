@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# This script helps you to manage the lamp in Ubuntu Windows WSL.
+# Author: Laszlo Kardos
+# License: GNU/GPL v3 or newer
+#
+# Installation:
+# sudo cp -R lamp /usr/bin/lamp
+# sudo chmod +x /usr/bin/lamp
+
+start=start
+stop=stop
+restart=restart
+status=status
+
+echo server $1 executed..
+
+if [ $1 == $start ]; then
+
+     echo "Starting servers..."
+     sudo service apache2 start
+     sudo service mysql start
+     echo "Apache2 and MySql now running..."
+
+elif [ $1 == $stop ]; then
+
+     echo "Stopping servers...."
+     sudo service apache2 stop
+     sudo service mysql stop
+     echo "Apache2 and MySql are now stopped..."
+
+elif [ $1 == $restart ]; then
+
+     echo "Restarting servers...."
+     sudo service apache2 restart
+     sudo service mysql restart
+     echo "Apache2 and MySql now running..."
+
+elif [ $1 == $status ]; then
+
+    echo "Server status"
+    sudo service apache2 status
+    sudo service mysql status
+
+else
+    echo "Please enter a command [start|restart|stop|status]"
+fi
