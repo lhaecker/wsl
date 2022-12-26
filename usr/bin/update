@@ -27,6 +27,11 @@ echo -e $TEXT_YELLOW
 echo 'APT upgrade finished...'
 echo -e $TEXT_RESET
 
+sudo snap refresh
+echo -e $TEXT_YELLOW
+echo 'SNAP refresh finished...'
+echo -e $TEXT_RESET
+
 sudo apt autoremove --purge -y
 echo -e $TEXT_YELLOW
 echo 'APT auto remove finished...'
