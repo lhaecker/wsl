@@ -1,2 +1,1 @@
-# wsl
-My WSL  files on Debian und Ubuntu
+My modifications for Debian and Ubuntu
