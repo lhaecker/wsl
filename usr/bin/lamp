@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# This script helps you to manage the lamp in Ubuntu Windows WSL.
+# This script helps you to manage the lamp in Debian and Ubuntu
 # Author: Laszlo Kardos
 # License: GNU/GPL v3 or newer
 #
@@ -18,29 +18,29 @@ echo server $1 executed..
 if [ $1 == $start ]; then
 
      echo "Starting servers..."
-     sudo service apache2 start
-     sudo service mysql start
+     sudo systemctl start apache2
+     sudo systemctl start mysql
      echo "Apache2 and MySql now running..."
 
 elif [ $1 == $stop ]; then
 
      echo "Stopping servers...."
-     sudo service apache2 stop
-     sudo service mysql stop
+     sudo systemctl stop apache2 
+     sudo systemctl stop mysql 
      echo "Apache2 and MySql are now stopped..."
 
 elif [ $1 == $restart ]; then
 
      echo "Restarting servers...."
-     sudo service apache2 restart
-     sudo service mysql restart
+     sudo systemctl restart apache2 
+     sudo systemctl stop mysql
      echo "Apache2 and MySql now running..."
 
 elif [ $1 == $status ]; then
 
     echo "Server status"
-    sudo service apache2 status
-    sudo service mysql status
+    sudo systemctl status apache2 
+    sudo systemctl status mysql 
 
 else
     echo "Please enter a command [start|restart|stop|status]"
